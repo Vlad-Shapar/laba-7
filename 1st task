@@ -1,0 +1,10 @@
+# 14. Y(x)=-x^cos(5*x), x=[0...10] 
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(0, 10)
+y = -x**np.cos(5*x)
+
+plt.plot(x, y)
+plt.show()
+plt.savefig('Перший_графік.png', dpi = 200)
