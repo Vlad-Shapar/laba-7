@@ -1,0 +1,13 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+test =  open('forlaba7.txt', 'r', encoding= "utf-8").read()
+
+symbols = list(test)
+
+df = pd.DataFrame({'symbol': symbols})
+df = df[df.symbol != ' ']
+df['num'] = 10
+df = df.groupby('symbol').sum().sort_values('num', ascending=False) / len(df)
+plt.bar(df.index, df.num, width=0.5)
+plt.show()
